@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PagesModule } from '../pages.module';
 
 import { HomeComponent } from './home.component';
 
@@ -8,7 +9,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      imports:[PagesModule] /*Importar el pagesmodule aqui para que no hubiera error del formsModule del input*/
     })
     .compileComponents();
 
