@@ -1,12 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ComponentsModule } from './components/components.module';
+import { PagesModule } from './pages/pages.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ComponentsModule , /*Se tiene que importar el modulo donde esta el componente para que testbed encuentre al componente*/ 
+        PagesModule,
+        
       ],
       declarations: [
         AppComponent
@@ -20,16 +25,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sesion27'`, () => {
+  it(`should have as title 'Sesion 27-Testing'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('sesion27');
+    expect(app.title).toEqual('Sesion 27-Testing');/*igual al titulo del script ts*/
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('sesion27 app is running!');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Sesion 27-Testing');/*cambie el queryselector de content a h1 donde 
+    esta la etiqueta mi titulo de app component*/
   });
+
 });

@@ -1,0 +1,40 @@
+<div class="container w-25 mx-auto mt-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <h1 class="text-center mb-4 h2"> Calculadora </h1>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Ingresa primer valor:</label>
+        <input type="number" class="form-control" id="Val1" [(ngModel)]="valor1">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Ingresa primer valor:</label>
+        <input type="number" class="form-control" id="Val2" [(ngModel)]="valor2">
+    </div>
+
+    <select [(ngModel)]="selected" (change)="capturar()" class="form-select mb-3">
+        <option value="0">Elejir una operación matemática</option>
+        <option *ngFor="let operador of operadores">
+          {{ operador }}
+        </option>
+      </select>
+      
+      <p [hidden]="selected == '0'">Vas a {{ Opcion }}</p>
+      
+      <div class="text-center">
+        <button class="btn btn-success" (click)="calcular()">calcular</button>
+
+      </div>
+      
+      <p>{{ resultado }}</p>
+
+    <!-- <div [ngSwitch]="num">
+        <div class="" *ngSwitchCase="1">Resultado es: {{valor1 + valor2 }}  </div>
+        <div class="" *ngSwitchCase="2">Resultado es: {{valor1 - valor2 }}  </div>
+        <div class="" *ngSwitchCase="3">Resultado es: {{valor1 * valor2 }}  </div>
+        <div class="" *ngSwitchCase="4">Resultado es: {{valor1 / valor2 }}  </div>
+        <div class="" *ngSwitchDefault><span class="">Resultado: </span>{{error}}</div>
+
+    </div> -->
+
+
+</div>
