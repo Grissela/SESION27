@@ -7,29 +7,27 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 //Primero creamos una variable datos
-operadores;
 
 valor1!:number;
 valor2 !:number;
+error="(No eligio operacion)";
+resultado:any;
+num!:string;
 
-//aqui el resultado
-resultado!:number;
+calcular(val1:number, val2:number,Op:string): any  
+{
+  if (Op == '+') {
+    return this.resultado = val1 + val2
 
-//luego creamos una variable para guardar la opcion selecionada
-//contra esta variable vamos con el ngModel
-selected: string = '0'; // Iniciamos
+  } else if (Op == '-') {
+    return this.resultado = val1 - val2
 
-//cremoa la variable donde lo guardare
-Opcion: string = '';
+  } else if (Op == '*') {
+    return this.resultado = val1 * val2
 
-constructor() {
-  this.operadores = ['+', '-', '*', '/'];
-}
-
-capturar() {
-  this.Opcion = this.selected;
-}
-
-calcular() {
-  return (this.resultado = eval(this.valor1 + this.Opcion + this.valor2));
+  } else if (Op == '/') {
+    return this.resultado = val1 / val2
+    console.log(this.resultado);
+    
 }}
+}

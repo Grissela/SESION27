@@ -22,4 +22,54 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Deberia sumar 2 numeros, calcular(val1:number, val2:number,Op:string)', () => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const component = fixture.componentInstance;
+
+    const data = { valor1: 3, valor2: 2, op: '+' };
+    const expectedResult = 5;
+
+    const result = component.calcular(data.valor1, data.valor2, data.op);
+    expect(result).toEqual(expectedResult);
+  })
+
+  it('Deberia restar 2 numeros, calcular(val1:number, val2:number,Op:string)', () => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const component = fixture.componentInstance;
+
+    const data = { valor1: 4, valor2: 2, op: '-' };
+    const expectedResult = 2;
+
+    const result = component.calcular(data.valor1, data.valor2, data.op);
+    expect(result).toEqual(expectedResult);
+  })
+
+  it('Deberia multiplicar 2 numeros, calcular(val1:number, val2:number,Op:string)', () => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const component = fixture.componentInstance;
+
+    const data = { valor1: 4, valor2: 3, op: '*' };
+    const expectedResult = 12;
+
+    const result = component.calcular(data.valor1, data.valor2, data.op);
+    expect(result).toEqual(expectedResult);
+  })
+
+  it('Deberia dividir 2 numeros, calcular(val1:number, val2:number,Op:string)', () => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const component = fixture.componentInstance;
+
+    const data = { valor1: 12, valor2: 2, op: '/' };
+    const expectedResult = 6;
+
+    const result = component.calcular(data.valor1, data.valor2, data.op);
+    expect(result).toEqual(expectedResult);
+  })
+
+
+
+
+
+
 });
